@@ -1,14 +1,6 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  BelongsToMany,
-  HasMany,
-  ForeignKey,
-  BelongsTo,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, BelongsToMany, HasMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { ChannelRegionsTable } from './channel-regions.model';
+import { ChannelTagsTable } from './channel-tags.model';
 import { NewsTable } from './news.model';
 import { PlatformTable } from './platform.model';
 import { RegionTable } from './region.model';
@@ -20,7 +12,7 @@ export class ChannelTable extends Model<ChannelTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 
@@ -28,10 +20,10 @@ export class ChannelTable extends Model<ChannelTable> {
   name: string;
 
   @ForeignKey(() => PlatformTable)
-  @Column({ type: DataType.NUMBER, allowNull: false })
+  @Column({ type: DataType.INTEGER, allowNull: false })
   platformId: number;
 
-  @Column({ type: DataType.NUMBER, allowNull: false })
+  @Column({ type: DataType.INTEGER, allowNull: false })
   subscribers: number;
 
   @Column({ type: DataType.TEXT, allowNull: false })
@@ -46,7 +38,7 @@ export class ChannelTable extends Model<ChannelTable> {
   @BelongsTo(() => PlatformTable)
   platform: PlatformTable;
 
-  @BelongsToMany(() => TagTable, () => ChannelTable)
+  @BelongsToMany(() => TagTable, () => ChannelTagsTable)
   tags: TagTable[];
 
   @BelongsToMany(() => RegionTable, () => ChannelRegionsTable)

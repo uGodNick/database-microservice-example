@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, BelongsToMany } from 'sequelize-typescript';
 import { ChannelTagsTable } from './channel-tags.model';
 import { ChannelTable } from './channel.model';
 import { NewsTagsTable } from './news-tags.model';
@@ -16,7 +10,7 @@ export class TagTable extends Model<TagTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 

@@ -1,10 +1,4 @@
-import {
-  Model,
-  Table,
-  Column,
-  DataType,
-  ForeignKey,
-} from 'sequelize-typescript';
+import { Model, Table, Column, DataType, ForeignKey } from 'sequelize-typescript';
 import { EmojiTable } from './emoji.table';
 import { CommentTable } from './comment.model';
 
@@ -14,7 +8,7 @@ export class CommentEmojisTable extends Model<CommentEmojisTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 

@@ -7,7 +7,7 @@ export class PlatformTable extends Model<PlatformTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 

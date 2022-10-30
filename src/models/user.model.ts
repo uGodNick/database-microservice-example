@@ -1,11 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  HasMany,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, HasMany, BelongsToMany } from 'sequelize-typescript';
 import { ChannelTable } from './channel.model';
 import { CommentTable } from './comment.model';
 import { UserChannelsTable } from './user-channels.model';
@@ -16,7 +9,7 @@ export class UserTable extends Model<UserTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 

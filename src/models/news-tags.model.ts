@@ -1,10 +1,4 @@
-import {
-  Model,
-  Table,
-  Column,
-  DataType,
-  ForeignKey,
-} from 'sequelize-typescript';
+import { Model, Table, Column, DataType, ForeignKey } from 'sequelize-typescript';
 import { NewsTable } from './news.model';
 import { TagTable } from './tag.model';
 
@@ -14,7 +8,7 @@ export class NewsTagsTable extends Model<NewsTagsTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 

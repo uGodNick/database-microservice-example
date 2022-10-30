@@ -1,10 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  BelongsToMany,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, BelongsToMany } from 'sequelize-typescript';
 import { CommentEmojisTable } from './comment-emojis.model';
 import { CommentTable } from './comment.model';
 
@@ -14,14 +8,14 @@ export class EmojiTable extends Model<EmojiTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 
   @Column({ type: DataType.TEXT, allowNull: false })
   icon: string;
 
-  @Column({ type: DataType.NUMBER, allowNull: false, defaultValue: 0 })
+  @Column({ type: DataType.INTEGER, allowNull: false, defaultValue: 0 })
   count: string;
 
   @BelongsToMany(() => CommentTable, () => CommentEmojisTable)

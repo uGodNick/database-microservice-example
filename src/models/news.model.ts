@@ -1,13 +1,4 @@
-import {
-  Table,
-  Column,
-  Model,
-  DataType,
-  HasMany,
-  BelongsToMany,
-  ForeignKey,
-  BelongsTo,
-} from 'sequelize-typescript';
+import { Table, Column, Model, DataType, HasMany, BelongsToMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
 import { ChannelTable } from './channel.model';
 import { NewsTagsTable } from './news-tags.model';
 import { TagTable } from './tag.model';
@@ -18,12 +9,12 @@ export class NewsTable extends Model<NewsTable> {
     type: DataType.INTEGER,
     unique: true,
     autoIncrement: true,
-    primaryKey: true,
+    primaryKey: true
   })
   id: number;
 
   @ForeignKey(() => ChannelTable)
-  @Column({ type: DataType.NUMBER, allowNull: false })
+  @Column({ type: DataType.INTEGER, allowNull: false })
   channelId: number;
 
   @Column({ type: DataType.TEXT, allowNull: false })
@@ -35,7 +26,7 @@ export class NewsTable extends Model<NewsTable> {
   @Column({ type: DataType.TEXT, allowNull: true })
   imageUrl: string;
 
-  @Column({ type: DataType.NUMBER, allowNull: true })
+  @Column({ type: DataType.INTEGER, allowNull: true })
   views: number;
 
   @BelongsTo(() => ChannelTable)
