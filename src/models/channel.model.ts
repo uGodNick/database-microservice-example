@@ -1,4 +1,13 @@
-import { Table, Column, Model, DataType, BelongsToMany, HasMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  BelongsToMany,
+  HasMany,
+  ForeignKey,
+  BelongsTo
+} from 'sequelize-typescript';
 import { ChannelRegionsTable } from './channel-regions.model';
 import { ChannelTagsTable } from './channel-tags.model';
 import { NewsTable } from './news.model';

@@ -6,7 +6,7 @@ describe('EmojiService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [EmojiService],
+      providers: [EmojiService]
     }).compile();
 
     service = module.get<EmojiService>(EmojiService);

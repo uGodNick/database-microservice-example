@@ -16,7 +16,7 @@ export class UserTable extends Model<UserTable> {
   @Column({ type: DataType.TEXT, allowNull: false })
   name: string;
 
-  @Column({ type: DataType.TEXT, allowNull: false })
+  @Column({ type: DataType.TEXT, allowNull: false, unique: true })
   email: string;
 
   @Column({ type: DataType.TEXT, allowNull: false })

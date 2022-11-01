@@ -3,10 +3,6 @@ import { ConfigModule } from '@nestjs/config';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { join } from 'path';
 
-// controllers and services
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 // modules
 import { ChannelModule } from './modules/channel/channel.module';
 import { NewsModule } from './modules/news/news.module';
@@ -71,8 +67,6 @@ import { ChannelRegionsTable } from './models/channel-regions.model';
     TagModule,
     CommentModule,
     EmojiModule
-  ],
-  controllers: [AppController],
-  providers: [AppService]
+  ]
 })
 export class AppModule {}

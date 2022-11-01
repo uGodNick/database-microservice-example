@@ -1,4 +1,15 @@
-import { Table, Column, Model, DataType, HasMany, BelongsToMany, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import {
+  Table,
+  Column,
+  Model,
+  DataType,
+  HasMany,
+  BelongsToMany,
+  ForeignKey,
+  BelongsTo
+} from 'sequelize-typescript';
+import { CommentEmojisTable } from './comment-emojis.model';
+import { EmojiTable } from './emoji.table';
 import { UserTable } from './user.model';
 
 @Table({ tableName: 'Comment' })
@@ -27,4 +38,7 @@ export class CommentTable extends Model<CommentTable> {
 
   @BelongsTo(() => UserTable)
   createdByUser: UserTable;
+
+  @BelongsToMany(() => EmojiTable, () => CommentEmojisTable)
+  emojis: EmojiTable[];
 }
