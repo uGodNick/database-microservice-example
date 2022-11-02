@@ -14,7 +14,7 @@ export const convertToChannel = (channel: ChannelTable): Channel => {
     url: channel.url,
     isUseToParse: channel.isUseToParse,
     news: channel.news?.map((news) => convertToNews(news)),
-    platform: convertToPlatform(channel.platform),
+    platform: channel.platform ? convertToPlatform(channel.platform) : undefined,
     tags: channel.tags?.map((tag) => convertToTag(tag)),
     regions: channel.regions?.map((region) => convertToRegion(region))
   };

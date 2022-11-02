@@ -11,7 +11,7 @@ export const convertToNews = (news: NewsTable): News => {
     content: news.content,
     imageUrl: news.imageUrl,
     views: news.views,
-    channel: convertToChannel(news.channel),
+    channel: news.channel ? convertToChannel(news.channel) : undefined,
     tags: news.tags?.map((tag) => convertToTag(tag))
   };
 };

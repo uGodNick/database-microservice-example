@@ -25,6 +25,7 @@ import { CommentEmojisTable } from './models/comment-emojis.model';
 import { ChannelTable } from './models/channel.model';
 import { ChannelTagsTable } from './models/channel-tags.model';
 import { ChannelRegionsTable } from './models/channel-regions.model';
+import { PlatformModule } from './modules/platform/platform.module';
 
 @Module({
   imports: [
@@ -66,7 +67,8 @@ import { ChannelRegionsTable } from './models/channel-regions.model';
     UserModule,
     TagModule,
     CommentModule,
-    EmojiModule
+    EmojiModule,
+    PlatformModule
   ]
 })
 export class AppModule {}

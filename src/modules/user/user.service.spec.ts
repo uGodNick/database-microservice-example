@@ -2,7 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UserService } from './user.service';
 import { getModelToken } from '@nestjs/sequelize';
 import { UserTable } from '../../models/user.model';
-import { MicroserviceResponse } from 'src/types/microservice-response';
+import { MicroserviceResponse } from '../../types/microservice-response';
 import { User } from '../../types/user';
 
 const userId = 0;

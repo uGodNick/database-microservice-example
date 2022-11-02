@@ -9,8 +9,10 @@ export const convertToComment = (comment: CommentTable): Comment => {
     userId: comment.userId,
     content: comment.content,
     repliedToCommentId: comment.repliedToCommentId,
-    repliedToComment: convertToComment(comment.repliedToComment),
-    createdByUser: convertToUser(comment.createdByUser),
+    repliedToComment: comment.repliedToComment
+      ? convertToComment(comment.repliedToComment)
+      : undefined,
+    createdByUser: comment.createdByUser ? convertToUser(comment.createdByUser) : undefined,
     emojis: comment.emojis?.map((emoji) => convertToEmoji(emoji))
   };
 };

@@ -59,9 +59,9 @@ describe('UserController', () => {
   it('calling createUser method', async () => {
     const createUserSpy = jest.spyOn(service, 'createUser');
     const dto: CreateUserDto = {
-      name: 'Test',
-      email: 'test@email.com',
-      passwordHash: 'hash'
+      name: '',
+      email: '',
+      passwordHash: ''
     };
     await controller.createUser(dto);
 
